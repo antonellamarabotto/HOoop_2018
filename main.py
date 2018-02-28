@@ -1,3 +1,4 @@
+import random
 class Fila(object):
     """Clase base de fila"""
 
@@ -6,6 +7,7 @@ class Fila(object):
          self.enfila= 0
          self.fila = []
          self.maxenfila=6
+
 class FilaPreferencial(Fila):
     """Clase de la fila de los clientes preferenciales"""        
     
@@ -53,6 +55,11 @@ class cliente(object):
         self.categoria=None
     def modificarcategoria(self, categoria):
         """modifica el atributo categoria del cliente """
+	res=random.randrange(2)
+	if res==1:
+		self.categoria="preferencial"
+	else:
+		self.categoria="General"
         
         pass
   
@@ -60,4 +67,7 @@ class cliente(object):
 if __name__ == "__main__":
     """ simular una fila en una entidad bancaria"""
     ###Como me refiero a una clase particular? Porque las funciones en la fila general o en la fila preferencial se llaman iguales.
+	lenfila=Fila()
+	
+	
     pass
